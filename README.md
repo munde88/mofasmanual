@@ -1680,11 +1680,3 @@ The following status words commonly appear in MOFAS:
 - Void
 
 ---
-
-## Revision History
-
-- 2026-03-05: Initial complete draft created.
-- 2026-03-05: Added role-based step-by-step workflows.
-- 2026-03-05: Expanded manual with detailed `Member Profile` and `Loan Summary` operational guidance.
-- 2026-03-05: Added comprehensive Loan Application flow (6.14-6.17), Loan Top-Up flow (6.18-6.22), Share Purchase flow (7.5-7.11), and Jamii Payment flow (7.12-7.18).
-- 2026-03-07: Refined the manual for end users by removing internal file names, technical implementation details, and developer-focused references.
