@@ -4,7 +4,7 @@ Version: 1.0 (Draft)
 
 Date: March 5, 2026
 
-Product: MOFAS (Makini Women Group Financial Application)
+Service: MOFAS (Makini Women Group Financial Application)
 
 Audience: End Users and Administrators
 
@@ -24,20 +24,18 @@ Language: English
 8. [Finance and Accounting](#8-finance-and-accounting)
 9. [Budgeting](#9-budgeting)
 10. [Sales and Invoicing](#10-sales-and-invoicing)
-11. [Inventory Management](#11-inventory-management)
-12. [Purchases](#12-purchases)
-13. [Products and Catalog](#13-products-and-catalog)
-14. [Events and Training](#14-events-and-training)
-15. [Uwajibikaji (Accountability)](#15-uwajibikaji-accountability)
-16. [Reports and Analytics](#16-reports-and-analytics)
-17. [Administration and Settings](#17-administration-and-settings)
-18. [Contracts and Marketing](#18-contracts-and-marketing)
-19. [Mobile Access](#19-mobile-access)
-20. [Troubleshooting and FAQ](#20-troubleshooting-and-faq)
-21. [Glossary](#21-glossary)
-22. [Appendix A: Role Guide](#appendix-a-role-guide)
-23. [Appendix B: Common Document Types](#appendix-b-common-document-types)
-24. [Appendix C: Common Statuses](#appendix-c-common-statuses)
+11. [Services and Catalog](#11-services-and-catalog)
+12. [Events and Training](#12-events-and-training)
+13. [Uwajibikaji (Accountability)](#13-uwajibikaji-accountability)
+14. [Reports and Analytics](#14-reports-and-analytics)
+15. [Administration and Settings](#15-administration-and-settings)
+16. [Contracts and Marketing](#16-contracts-and-marketing)
+17. [Mobile Access](#17-mobile-access)
+18. [Troubleshooting and FAQ](#18-troubleshooting-and-faq)
+19. [Glossary](#19-glossary)
+20. [Appendix A: Role Guide](#appendix-a-role-guide)
+21. [Appendix B: Common Document Types](#appendix-b-common-document-types)
+22. [Appendix C: Common Statuses](#appendix-c-common-statuses)
 
 ---
 
@@ -1314,7 +1312,7 @@ Common payment methods:
 ### 10.4 Role-Based Procedure
 
 1. `Sale/Admin`: `Loans & Services` -> `invoices` -> create invoice -> add items -> save.
-2. `Cashier/POS User`: `POS` -> select products -> capture payment method -> finalize receipt.
+2. `Cashier/POS User`: `POS` -> select services -> capture payment method -> finalize receipt.
 3. `Accountant`: Open payment records and reconcile with bank/cash movement.
 
 ![Screenshot: Sales invoice list](screenshots/sales-invoices.png)
@@ -1322,97 +1320,45 @@ Common payment methods:
 
 ---
 
-## 11. Inventory Management
+## 11. Services and Catalog
 
-### 11.1 Inventory Operations
+### 11.1 Service Types
 
-- Maintain stock balances
-- Create stock requests
-- Execute stock transfers
-- Manage delivery confirmations
+- Service
+- Charge
+- Subscription
+- Package
 
-### 11.2 Storage Structure
+### 11.2 Service Master Data
 
-- Warehouses
-- Locations/stores
-- Transfer records with traceability
+- Categories and groups
+- Unit measures where applicable
+- Pricing and default behaviors
 
 ### 11.3 Role-Based Procedure
 
-1. `Store/Warehouse User`: Open inventory stock view -> verify quantity and reorder indicators.
-2. `Manager`: `Inventory` -> `Transfers` -> create transfer request -> submit.
-3. `Receiving User`: Confirm delivery and update transfer completion status.
+1. `Admin/Service Manager`: Open service catalog -> create category/group.
+2. `Admin/Service Manager`: Create service and assign the relevant service type (`Service`, `Charge`, `Subscription`, `Package`).
+3. `Sales/Service User`: Validate the service appears in invoice and POS flows.
 
-![Screenshot: Inventory stock view](screenshots/inventory-stock.png)
-![Screenshot: Stock transfer form](screenshots/stock-transfer.png)
-
----
-
-## 12. Purchases
-
-### 12.1 Purchase Order Lifecycle
-
-- Draft
-- Open
-- Partially Received
-- Full Received
-- Invoiced
-- Closed
-
-### 12.2 Goods Receipt and Debit Notes
-
-- Capture incoming goods
-- Record purchase debit notes where required
-
-### 12.3 Role-Based Procedure
-
-1. `Procurement User`: Create purchase order in `Draft` and submit as `Open`.
-2. `Receiving User`: Record goods receipt and update order to `Partially Received` or `Full Received`.
-3. `Accountant`: Post supplier invoice and close PO lifecycle.
-
-![Screenshot: Purchase orders list](screenshots/purchase-orders.png)
+![Screenshot: Service catalog](screenshots/product-catalog.png)
 
 ---
 
-## 13. Products and Catalog
+## 12. Events and Training
 
-### 13.1 Product Types
-
-- Manufactured
-- Stockable
-- Service
-- Charge
-
-### 13.2 Product Master Data
-
-- Categories and groups
-- Unit measures
-- Pricing and default behaviors
-
-### 13.3 Role-Based Procedure
-
-1. `Admin/Product Manager`: Open product catalog -> create category/group.
-2. `Admin/Product Manager`: Create product and assign product type (`Manufactured`, `Stockable`, `Service`, `Charge`).
-3. `Sales/Inventory User`: Validate product appears in invoice/POS and stock flows.
-
-![Screenshot: Product catalog](screenshots/product-catalog.png)
-
----
-
-## 14. Events and Training
-
-### 14.1 Event Management
+### 12.1 Event Management
 
 - Create meetings and training sessions
 - Assign speakers
 - Manage attendee records
 
-### 14.2 Attendance and Penalties
+### 12.2 Attendance and Penalties
 
 - Capture attendance status
 - Apply event-related penalties when policy requires
 
-### 14.3 Role-Based Procedure
+### 12.3 Role-Based Procedure
 
 1. `Katibu/Events Role`: `Planning & Events` -> create event with date, venue, and agenda.
 2. `Events Role`: Register attendees and speakers.
@@ -1422,21 +1368,21 @@ Common payment methods:
 
 ---
 
-## 15. Uwajibikaji (Accountability)
+## 13. Uwajibikaji (Accountability)
 
-### 15.1 Core Activities
+### 13.1 Core Activities
 
 - Create accountability records
 - Assign responsibility
 - Delegate activities
 - Manage delegation requests
 
-### 15.2 Guarantees
+### 13.2 Guarantees
 
 - Track `Loans I Guaranteed`
 - Track `Members I Guaranteed`
 
-### 15.3 Role-Based Procedure
+### 13.3 Role-Based Procedure
 
 1. `Uwajibikaji Role`: Open `Uwajibikaji` -> create accountability item -> assign owner.
 2. `Uwajibikaji Role`: Delegate task and track delegation request status.
@@ -1446,9 +1392,9 @@ Common payment methods:
 
 ---
 
-## 16. Reports and Analytics
+## 14. Reports and Analytics
 
-### 16.1 Available Report Areas
+### 14.1 Available Report Areas
 
 - Financial reports
 - Loan reports
@@ -1456,11 +1402,11 @@ Common payment methods:
 - Revenue and sales reports
 - Summary and graphical dashboards
 
-### 16.2 Export Guidance
+### 14.2 Export Guidance
 
 Use export actions only if your role allows exports for that area.
 
-### 16.3 Role-Based Procedure
+### 14.3 Role-Based Procedure
 
 1. `Manager`: Open `Reports` -> run operational summaries.
 2. `Accountant/Treasurer`: Run financial reports and validate balances against journals.
@@ -1470,28 +1416,28 @@ Use export actions only if your role allows exports for that area.
 
 ---
 
-## 17. Administration and Settings
+## 15. Administration and Settings
 
-### 17.1 Organization Setup
+### 15.1 Organization Setup
 
 - Company profile
 - Branch/store setup
 - Region and country data
 - Currency and tax configuration
 
-### 17.2 User and Security Administration
+### 15.2 User and Security Administration
 
 - Assign users to roles
 - Review role permissions
 - Validate access boundaries by module
 
-### 17.3 Suggested Admin Routine
+### 15.3 Suggested Admin Routine
 
 1. Review pending user or role changes.
 2. Review settings drift across branches.
 3. Verify reports and exports access.
 
-### 17.4 Role-Based Procedure
+### 15.4 Role-Based Procedure
 
 1. `Administrator`: `Settings` -> maintain company, branch, region, currency, and tax settings.
 2. `Administrator`: Open user/role management and assign roles based on least privilege.
@@ -1501,19 +1447,19 @@ Use export actions only if your role allows exports for that area.
 
 ---
 
-## 18. Contracts and Marketing
+## 16. Contracts and Marketing
 
-### 18.1 Contracts
+### 16.1 Contracts
 
 - Capture and maintain agreement records
 - Reference contract terms in operations where needed
 
-### 18.2 Marketing and Support
+### 16.2 Marketing and Support
 
 - Manage support-related pages and pricing views
-- Keep customer communications aligned with product policy
+- Keep customer communications aligned with service policy
 
-### 18.3 Role-Based Procedure
+### 16.3 Role-Based Procedure
 
 1. `Manager/Admin`: Open contracts list, create or update contract metadata, and validate active dates.
 2. `Manager`: Review marketing/support content for policy consistency.
@@ -1523,17 +1469,17 @@ Use export actions only if your role allows exports for that area.
 
 ---
 
-## 19. Mobile Access
+## 17. Mobile Access
 
 Some organizations may use MOFAS together with mobile-connected services or other approved integrations.
 
-### 19.1 Notes
+### 17.1 Notes
 
 - Mobile or connected access depends on how your organization has set up the system.
 - Some features may be available on the web only.
 - If mobile access is part of your setup, follow the instructions given by your administrator.
 
-### 19.2 Guidance
+### 17.2 Guidance
 
 1. Confirm with your administrator whether mobile access is enabled.
 2. Use only approved login details and official access instructions.
@@ -1541,29 +1487,29 @@ Some organizations may use MOFAS together with mobile-connected services or othe
 
 ---
 
-## 20. Troubleshooting and FAQ
+## 18. Troubleshooting and FAQ
 
-### 20.1 Login Fails
+### 18.1 Login Fails
 
 - Confirm your account is active in the sign-in system.
 - Confirm assigned role includes application access.
 - Ask admin to validate role and permission mapping.
 
-### 20.2 Menu Item Missing
+### 18.2 Menu Item Missing
 
 - Missing menu items usually indicate missing permission.
 - Confirm your role includes access to that area.
 
-### 20.3 Action Button Disabled
+### 18.3 Action Button Disabled
 
 - Action operations often require elevated permission (for example approvals, exports, disbursements).
 
-### 20.4 Data Not Visible
+### 18.4 Data Not Visible
 
 - User scope may be restricted by role.
 - Refresh and re-login after role changes.
 
-### 20.5 When to Escalate
+### 18.5 When to Escalate
 
 Escalate to system administrator when:
 
@@ -1574,7 +1520,7 @@ Escalate to system administrator when:
 
 ---
 
-## 21. Glossary
+## 19. Glossary
 
 - `Miamala`: Wallet and transaction activities.
 - `Uwajibikaji`: Accountability tasks and delegated responsibilities.
@@ -1615,11 +1561,8 @@ You may see the following document names in the system:
 - Sales Invoice
 - Sales Debit Note
 - Sales Credit Note
-- Purchase Debit Note
-- Purchase Credit Note
 - Receive Payment
 - Fulfillment
-- Purchase Invoice
 - Bank Transfer
 - Payment
 - Advance Payment
@@ -1628,14 +1571,11 @@ You may see the following document names in the system:
 - Closing Entries
 - Adjustment Entry
 - Correction Entry
-- Opening Stock
-- Stock Transfer
 - Cash
 - Card
 - Cheque
 - Credit Note
 - Debit Note
-- Goods Receipt
 - Deposit
 - Share Purchase
 - Withdrawal
@@ -1668,12 +1608,10 @@ The following status words commonly appear in MOFAS:
 - Ceased
 - Final Review
 
-### C.3 Purchase and Invoice Statuses
+### C.3 Invoice Statuses
 
 - Draft
 - Open
-- Partially Received
-- Fully Received
 - Invoiced
 - Closed
 - Overdue
